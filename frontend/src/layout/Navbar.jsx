@@ -1,12 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
-  // ✅ Get token
   const token = localStorage.getItem("token");
 
-  // ✅ Logout function
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -14,31 +12,54 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center px-10 py-5">
-      <h1 className="text-2xl font-semibold hover:cursor-not-allowed ">✨ PREP AI</h1>
 
+    
+      <div
+        className="flex items-center gap-2 cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        <img
+          src={logo}
+          alt="Prep AI Logo"
+          className="h-12 w-15 object-contain"
+        />
+        <h1 className="text-xl font-bold">Prep AI</h1>
+      </div>
+
+      {/* NAV LINKS */}
       <div className="hidden md:flex gap-8 items-center text-sm font-medium">
-        <Link to='/'>
-          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 hover:cursor-pointer">Home</p>
+        <Link to="/">
+          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
+            Home
+          </p>
         </Link>
 
-        <Link to='/resume'>
-          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 hover:cursor-pointer">Resume Analyzer</p>
+        <Link to="/resume">
+          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
+            Resume Analyzer
+          </p>
         </Link>
 
-        <Link to='/interview'>
-          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 hover:cursor-pointer">Interview Prep</p>
+        <Link to="/interview">
+          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
+            Interview Prep
+          </p>
         </Link>
 
-        <Link to='/resource'>
-          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 hover:cursor-pointer">Resources ▾</p>
+        <Link to="/resource">
+          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
+            Resources
+          </p>
         </Link>
 
-        <Link to='/about'>
-          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 hover:cursor-pointer">About Us</p>
+        <Link to="/about">
+          <p className="hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1">
+            About Us
+          </p>
         </Link>
       </div>
 
-      {/* RIGHT SIDE BUTTONS */}
+      {/* AUTH BUTTONS */}
       <div className="flex gap-3">
         {!token ? (
           <>

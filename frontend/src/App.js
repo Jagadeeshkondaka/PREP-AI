@@ -6,6 +6,7 @@ import Resume from "./pages/Resume";
 import Interview from "./pages/Interview";
 import Resources from "./pages/Resource";
 import About from "./pages/About";
+import ProtectedRoute from "./components/protectedroute";
 
 function App() {
   return (
@@ -14,9 +15,33 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/resume" element={<Resume/>}/>
-        <Route path="/interview" element={<Interview/>}/>
-        <Route path="/resource" element={<Resources/>}/>
+
+        <Route
+          path="/resume"
+          element={
+            <ProtectedRoute>
+              <Resume />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/interview"
+          element={
+            <ProtectedRoute>
+              <Interview />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/resource"
+          element={
+            <ProtectedRoute>
+              <Resources />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/about" element={<About/>}/>
       </Routes>
     </BrowserRouter>
