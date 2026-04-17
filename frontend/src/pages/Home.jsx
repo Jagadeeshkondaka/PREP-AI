@@ -43,7 +43,7 @@ const Home = () => {
                 />
                 <img
                   src="https://i.pravatar.cc/40?img=2"
-                  alt="profime image2"
+                  alt="profileimage2"
                   className="w-8 h-8 rounded-full border"
                 />
                 <img
