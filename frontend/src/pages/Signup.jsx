@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import API from "../config";
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -19,7 +18,7 @@ const Signup = () => {
   console.log("Button clicked"); // 👈 add this
 
   try {
-    const res = await axios.post(`${API}/api/auth/signup`, form);
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`,form);
     alert(res.data);
   } catch (err) {
     console.log(err.response.data);

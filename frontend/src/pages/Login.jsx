@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import API from "../config";
+
 
 const Login = () => {
   const navigate=useNavigate();
@@ -25,7 +25,7 @@ const Login = () => {
 
   try {
     const res = await axios.post(
-      `${API}/api/auth/login`,
+     `${process.env.REACT_APP_API_URL}/api/auth/login`,
       form
     );
 

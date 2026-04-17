@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import Navbar from "../layout/Navbar";
-import API from "../config";
 
 const Resume = () => {
   const [file, setFile] = useState(null);
@@ -21,7 +20,7 @@ const Resume = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${API}/api/resume/analyze`,
+        `${process.env.REACT_APP_API_URL}/api/resume/analyze`,
         formData,
         {
           headers: {
