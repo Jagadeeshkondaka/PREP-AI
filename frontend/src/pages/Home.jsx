@@ -38,17 +38,17 @@ const Home = () => {
               <div className="flex -space-x-2">
                 <img
                   src="https://i.pravatar.cc/40?img=1"
-                  alt="profile image"
+                  alt="profile"
                   className="w-8 h-8 rounded-full border"
                 />
                 <img
                   src="https://i.pravatar.cc/40?img=2"
-                  alt="profileimage2"
+                  alt=""
                   className="w-8 h-8 rounded-full border"
                 />
                 <img
                   src="https://i.pravatar.cc/40?img=3"
-                  alt="profile image3"
+                  alt=""
                   className="w-8 h-8 rounded-full border"
                 />
               </div>
