@@ -19,7 +19,7 @@ const Interview = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${API}/api/interview/generate`,
+        `${process.env.REACT_APP_API_URL}/api/interview/generate`,
         { role }
       );
 
@@ -50,7 +50,7 @@ const Interview = () => {
 
     try {
       const res = await axios.post(
-        `${API}/api/interview/evaluate`,
+        `${process.env.REACT_APP_API_URL}/api/interview/evaluate`,
         {
           question: item.question,
           answer: item.answer

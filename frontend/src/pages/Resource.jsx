@@ -18,7 +18,7 @@ const Resources = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${API}/api/resources`,
+        `${process.env.REACT_APP_API_URL}/api/resources`,
         { query }
       );
 
