@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Navbar from "../layout/Navbar";
-import API from "../config";
+
 
 const Resources = () => {
   const [query, setQuery] = useState("");
