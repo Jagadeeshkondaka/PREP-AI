@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Navbar from "../layout/Navbar";
+import API from "../config";
 
 const Interview = () => {
   const [role, setRole] = useState("");
@@ -18,7 +19,7 @@ const Interview = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/interview/generate",
+        `${API}/api/interview/generate`,
         { role }
       );
 
