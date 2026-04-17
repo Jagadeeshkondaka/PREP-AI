@@ -36,7 +36,7 @@ const Signup = () => {
         { name, email, password }
       );
 
-      alert("Registered successfully");
+      alert(res.data.message || "Registered successfully");
 
       navigate("/login"); // ✅ redirect
 
